@@ -12,9 +12,11 @@ export default function Timer({dispatch , secondsRemaining}) {
       }
   },[dispatch])
   return (
+<div className=" timer-container">
     <div className="timer">
       {minutes < 10 ? "0" : ""}
       {minutes}:{seconds}{seconds < 10 ? "0" : ""}
     </div>
+</div>
   );
 }

@@ -9,7 +9,7 @@ export default function FinishScreen({points , maxPossiblePoints , dispatch , hi
   if(percentage >0 && percentage <50)  emoji = '😢'
   if(percentage === 0)  emoji = '🤦‍♂️'
   return (
-    <>
+    <div className='finish-screen'>
       <p className="result">
         <span>
           {emoji} You scored <strong>{points}</strong> out of{" "}
@@ -19,11 +19,11 @@ export default function FinishScreen({points , maxPossiblePoints , dispatch , hi
       <p className='highscore'> (Highscore : {highScore} points) </p>
 
       <button
-        className="btn btn-ui "
+        className="btn btn-ui -mx-8 "
         onClick={() => dispatch({ type: "reset" })}
       >
         Restart quiz 
       </button>
-    </>
+    </div>
   );
 }

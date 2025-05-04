@@ -3,7 +3,7 @@ export default function Question({ Question, dispatch, answer }) {
   const hasAnswered = answer !== null;
   const renderOptions = options.map((option, index) => (
     <button
-      className={`btn btn-option ${index === answer ? "answer " : ""}  ${
+      className={`btn btn-option  ${index === answer ? "answer " : ""}  ${
         hasAnswered
           ? option === options[correctOption]
             ? "correct"
@@ -22,9 +22,9 @@ export default function Question({ Question, dispatch, answer }) {
   ));
 
   return (
-    <div>
+    <div className="question">
       <h4>{question}</h4>
-      <div className="options">{renderOptions}</div>
+      <div className="options ">{renderOptions}</div>
     </div>
   );
 }

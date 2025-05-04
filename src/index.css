@@ -17,6 +17,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.question{
+  @apply box-content mx-8
+}
 
 html {
   font-size: 62.5%;
@@ -28,7 +31,9 @@ body {
   min-height: 100vh;
   color: var(--color-light);
   background-color: var(--color-darkest);
-  padding: 3.2rem;
+  padding: 2.2rem;
+  overflow-x: hidden;
+
 }
 
 .app {
@@ -36,19 +41,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .main {
   width: 50rem;
 }
 
-.app-header {
-  width: 66rem;
-  margin-bottom: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 .error {
   text-align: center;
@@ -59,18 +59,15 @@ body {
   border-radius: 100px;
 }
 
-img {
-  width: 14rem;
-}
+
 
 h1 {
   font-family: "Codystar";
-  font-size: 5.6rem;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 3.6rem;
+  /* font-size: 3.6rem; */
   margin-bottom: 2rem;
   font-weight: bold;
 }
@@ -88,12 +85,14 @@ h4 {
 }
 
 .start {
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .progress {
+  margin-top: 2rem;
   margin-bottom: 4rem;
   display: grid;
   justify-content: space-between;
@@ -145,6 +144,7 @@ progress {
 
 .btn-ui {
   float: right;
+  margin: 0 2rem;
 }
 
 .options {
@@ -152,6 +152,8 @@ progress {
   flex-direction: column;
   gap: 1.2rem;
   margin-bottom: 3.2rem;
+  @apply box-content mx-3
+
 }
 
 .btn-option {
@@ -182,7 +184,11 @@ progress {
   padding: 2rem 0;
   font-size: 2rem;
   font-weight: 500;
+  /* margin:0 2rem; */
   margin-bottom: 1.6rem;
+}
+.finish-screen{
+  @apply box-content  m-10
 }
 
 .result span {
@@ -208,13 +214,16 @@ progress {
 }
 
 .timer {
-  float: left;
+  float:left;
+  margin:0 2rem;
   font-size: 1.8rem;
   color: var(--color-medium);
   border: 2px solid var(--color-dark);
   padding: 1.35rem 2.8rem;
   border-radius: 100px;
+ 
 }
+
 
 /* CREDIT: https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
 .loader {
