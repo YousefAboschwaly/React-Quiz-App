@@ -1,8 +1,6 @@
 import React from 'react'
-import { useQuiz } from '../context/QuizContext'
 
-export default function FinishScreen() {
-  const { dispatch, points, maxPossiblePoints, highScore } = useQuiz()
+export default function FinishScreen({points , maxPossiblePoints , dispatch , highScore}) {
   const percentage = (points / maxPossiblePoints) * 100
   let emoji
   if(percentage === 100)  emoji = '🥇'

@@ -1,9 +1,5 @@
-import { useQuiz } from "../context/QuizContext";
-
-export default function Question() {
-  const { questions, index , answer, dispatch } = useQuiz();
-
-  const { question, options, correctOption } = questions[index];
+export default function Question({ Question, dispatch, answer }) {
+  const { question, options, correctOption } = Question;
   const hasAnswered = answer !== null;
   const renderOptions = options.map((option, index) => (
     <button

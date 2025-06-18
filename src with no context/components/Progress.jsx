@@ -1,8 +1,5 @@
-import { useQuiz } from "../context/QuizContext";
 
-export default function Progress() {
-  const {index,numQuestions,points,maxPossiblePoints} = useQuiz()
-
+export default function Progress({index, numQuestions, points, maxPossiblePoints}) {
   return (
     <div className="text-center mt-8 flex justify-center items-center ">
 
