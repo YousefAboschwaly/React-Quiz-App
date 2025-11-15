@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { supabase } from "../lib/supabase";
 
 const QuizContext = createContext();
 
@@ -91,13 +92,22 @@ function QuizProvider({ children }) {
     (prev, cur) => prev + cur.points,
     0
   );
+useEffect(function () {
+  async function loadQuestions() {
+    const { data, error } = await supabase
+      .from("questions")
+      .select("*");
+      console.log(data, error);
+    if (error) {
+      dispatch({ type: "dataFailed" });
+      return;
+    }
 
-  useEffect(function () {
-    fetch("http://localhost:8000/questions")
-      .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataReceived", data: data }))
-      .catch(() => dispatch({ type: "dataFailed" }));
-  }, []);
+    dispatch({ type: "dataReceived", data });
+  }
+
+  loadQuestions();
+}, []);
 
   return (
     <QuizContext.Provider
